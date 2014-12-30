@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>jmx.examples</groupId>
+		<artifactId>jmx_examples</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>jmx_descriptors</artifactId>
+	<name>JMX Examples - Descriptors</name>
+	<description>JMX Examples - Descriptors</description>
+
+	<packaging>jar</packaging>
+
+	<properties>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<!-- Make this jar executable -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<!-- DO NOT include log4j.properties file in your Jar -->
+					<excludes>
+						<exclude>**/log4j.properties</exclude>
+					</excludes>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.example.mxbeans.Main</mainClass>
+							<classpathPrefix>dependency-jars/</classpathPrefix>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+						<manifestEntries>
+							<mode>development</mode>
+							<url>${project.url}</url>
+							<!--key>value</key -->
+							<!--Implementation-Build>${buildNumber}</Implementation-Build -->
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
+
+
