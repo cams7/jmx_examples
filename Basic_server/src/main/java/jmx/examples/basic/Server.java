@@ -106,7 +106,7 @@ public class Server {
 			//
 			echo("\nCreate an RMI connector server");
 			JMXServiceURL url = new JMXServiceURL(
-					"service:jmx:rmi:///jndi/rmi://0.0.0.0:9999/server");
+					"service:jmx:rmi:///jndi/rmi://:9999/server");
 			JMXConnectorServer cs = JMXConnectorServerFactory
 					.newJMXConnectorServer(url, null, mbs);
 

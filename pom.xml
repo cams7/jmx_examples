@@ -22,7 +22,7 @@
 		<user.name>Cesar Magalhaes</user.name>
 		<site></site>
 	</properties>
-	
+
 	<modules>
 		<module>Basic_base</module>
 		<module>Basic_server</module>
@@ -37,8 +37,10 @@
 		<module>Security-fine_grained</module>
 		<module>Security-simple</module>
 		<module>Security-subject_delegation</module>
+		<module>JMX_Basics</module>
+		<module>JMX_Authentication</module>
 	</modules>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -57,7 +59,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -70,7 +72,7 @@
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
 				</configuration>
-			</plugin>	
+			</plugin>
 
 			<!-- Copy project dependency -->
 			<plugin>
